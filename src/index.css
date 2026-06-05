@@ -10,3 +10,16 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  a[href],
+  select,
+  summary,
+  [tabindex]:not([tabindex="-1"]) {
+    cursor: pointer;
+}
+

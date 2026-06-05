@@ -4,8 +4,8 @@ import NotificationIcon from '../icons/notification.svg?react'
 
 const Navbar = ({ title }) => {
   return (
-    <header className="bg-white shadow-sm px-6 py-6 flex items-center justify-between">
-      <h1 className="text-2xl font-bold text-gray-800">{title}</h1>
+    <header className="bg-white shadow-sm px-6 py-6 flex items-center justify-between border-b border-gray-100">
+      <h1 className="text-2xl font-semibold text-[#343C6A]">{title}</h1>
 
       <div className="flex items-center gap-6">
         {/* Search */}

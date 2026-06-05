@@ -23,7 +23,7 @@ const menuItems = [
 
 const Sidebar = () => {
   return (
-    <aside className="w-60 h-screen bg-white shadow-md flex flex-col">
+    <aside className="w-60 h-screen bg-white shadow-md flex flex-col border-r border-gray-100">
       <div className="flex items-center gap-3 px-6 py-6">
         <img src="/icons/Logo.svg" alt="BankDash Logo" className="w-7 h-7" />
         <span className="text-2xl font-extrabold text-[#343C6A]">BankDash.</span>
