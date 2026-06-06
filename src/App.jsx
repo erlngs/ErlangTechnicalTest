@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
@@ -10,7 +11,7 @@ const pageTitles = {
   '/transactions': 'Transactions',
   '/accounts': 'Accounts',
   '/investments': 'Investments',
-  '/credit-cards': 'Credit Cards',  
+  '/credit-cards': 'Credit Cards',
   '/loans': 'Loans',
   '/services': 'Services',
   '/privileges': 'My Privileges',
@@ -20,13 +21,14 @@ const pageTitles = {
 function App() {
   const location = useLocation()
   const title = pageTitles[location.pathname] || 'Dashboard'
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="flex h-screen bg-[#F5F7FA] font-sans">
-      <Sidebar />
-      <div className="flex flex-col flex-1 overflow-hidden">
-        <Navbar title={title} />
-        <main className="flex-1 overflow-y-auto p-6">
+    <div className="flex min-h-screen bg-[#F5F7FA] font-sans">
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      <div className="flex flex-col flex-1 ml-0 md:ml-16 lg:ml-60 min-w-0">
+        <Navbar title={title} onMenuClick={() => setSidebarOpen(true)} />
+        <main className="flex-1 overflow-y-auto p-4 md:p-6">
           <Routes>
             <Route path="/" element={<></>} />
             <Route path="/transactions" element={<Transactions />} />
