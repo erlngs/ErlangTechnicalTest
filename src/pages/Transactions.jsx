@@ -235,13 +235,13 @@ const Transactions = () => {
             <table className="w-full text-sm table-auto">
               <thead>
                 <tr className="text-left text-[#718EBF]">
-                  <th className="pb-4 font-medium w-45">Description</th>
-                  <th className="pb-4 font-medium w-30">Transaction ID</th>
-                  <th className="pb-4 font-medium w-20">Type</th>
-                  <th className="pb-4 font-medium w-25">Card</th>
-                  <th className="pb-4 font-medium w-30">Date</th>
-                  <th className="pb-4 font-medium w-20">Amount</th>
-                  <th className="pb-4 font-medium w-25 text-center">Receipt</th>
+                  <th className="pb-4 font-medium text-base w-45">Description</th>
+                  <th className="pb-4 font-medium text-base w-30">Transaction ID</th>
+                  <th className="pb-4 font-medium text-base w-20">Type</th>
+                  <th className="pb-4 font-medium text-base w-25">Card</th>
+                  <th className="pb-4 font-medium text-base w-30">Date</th>
+                  <th className="pb-4 font-medium text-base w-20">Amount</th>
+                  <th className="pb-4 font-medium text-base w-25 text-center">Receipt</th>
                 </tr>
               </thead>
               <tbody>
@@ -259,11 +259,11 @@ const Transactions = () => {
                     <td className="py-4">{t.type}</td>
                     <td className="py-4">{t.card}</td>
                     <td className="py-4">{t.date}</td>
-                    <td className={`py-4 font-semibold ${t.income ? 'text-green-500' : 'text-red-400'}`}>
+                    <td className={`py-4 font-semibold text-left ${t.income ? 'text-[#16DBAA]' : 'text-[#FE5C73]'}`}>
                       {t.income ? `+$${t.amount}` : `-$${Math.abs(t.amount)}`}
                     </td>
                     <td className="py-4 text-center">
-                      <button className="border border-[#1814F3] rounded-full px-4 py-1.5 text-xs text-[#1814F3] hover:bg-[#1814F3] hover:text-white transition-colors cursor-pointer">
+                      <button className="border border-[#123288] rounded-full px-4 py-1.5 text-xs text-[#123288] hover:bg-[#1814F3] hover:text-white transition-colors cursor-pointer">
                         Download
                       </button>
                     </td>

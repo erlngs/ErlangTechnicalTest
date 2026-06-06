@@ -49,10 +49,10 @@ const Navbar = ({ title, onMenuClick }) => {
               className="bg-transparent text-sm outline-none text-gray-500 w-full"
             />
           </div>
-          <div className="p-2 bg-[#F5F7FA] rounded-full cursor-pointer hover:bg-gray-200 transition-colors">
+          <div className="p-3 bg-[#F5F7FA] rounded-full cursor-pointer hover:bg-gray-200 transition-colors">
             <SettingsIcon className="w-5 h-5 text-gray-500" />
           </div>
-          <div className="p-2 bg-[#F5F7FA] rounded-full cursor-pointer hover:bg-gray-200 transition-colors">
+          <div className="p-3 bg-[#F5F7FA] rounded-full cursor-pointer hover:bg-gray-200 transition-colors">
             <NotificationIcon className="w-5 h-5 text-gray-500" />
           </div>
           <img
