@@ -46,8 +46,8 @@ const Accounts = () => {
   return (
     <div className="space-y-6">
 
-      {/* Stat Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      {/* Stat Cards desktop*/}
+      <div className="hidden xl:grid grid-cols-4 gap-10">
         {statCards.map((card) => (
           <div key={card.label} className={`${card.bg} rounded-3xl p-8 flex items-center gap-4`}>
             <div className={`${card.iconBg} rounded-full p-5 flex-shrink-0`}>
@@ -61,11 +61,41 @@ const Accounts = () => {
         ))}
       </div>
 
-      {/* Middle Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* Stat Cards tablet */}
+      <div className="hidden md:grid xl:hidden grid-cols-2 gap-4">
+        {statCards.map((card) => (
+          <div key={card.label} className={`${card.bg} rounded-3xl p-6 flex items-center gap-3`}>
+            <div className={`${card.iconBg} rounded-full p-4 flex-shrink-0`}>
+              <card.icon className="w-6 h-6" />
+            </div>
+            <div>
+              <p className="text-base text-[#718EBF]">{card.label}</p>
+              <p className="text-lg font-bold text-[#343C6A]">{card.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Stat Cards mobile */}
+      <div className="grid md:hidden grid-cols-2 gap-4">
+        {statCards.map((card) => (
+          <div key={card.label} className={`${card.bg} rounded-3xl p-6 flex items-center gap-3`}>
+            <div className={`${card.iconBg} rounded-full p-3 flex-shrink-0`}>
+              <card.icon className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-sm text-[#718EBF]">{card.label}</p>
+              <p className="text-base font-bold text-[#343C6A]">{card.value}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Middle Section — mobile: 1 kolom, desktop: 3 kolom */}
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
 
         {/* Last Transaction */}
-        <div className="lg:col-span-2 flex flex-col">
+        <div className="xl:col-span-2 flex flex-col">
           <h2 className="text-xl font-semibold text-[#343C6A] mb-4">Last Transaction</h2>
           <div className="bg-white rounded-3xl p-6 flex-1">
             {lastTransactions.map((t, i) => (
@@ -117,7 +147,7 @@ const Accounts = () => {
             <div className="w-full rounded-b-3xl bg-gradient-to-b from-[#539BFF] to-[#539BFF]">
               <div className="px-5 py-3">
                 <div className="flex justify-between items-center">
-                  <div className="text-white text-lg font-semibold tracking-widest bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-white text-lg font-semibold tracking-widest bg-gradient-to-r from-white to-[#539BFF] bg-clip-text text-transparent">
                     3778 **** **** 1234
                   </div>
                   <ElipseIcon className="w-10 h-10 text-[#343C6A]" />
@@ -129,14 +159,17 @@ const Accounts = () => {
 
       </div>
 
-      {/* Bottom Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* Bottom Section — mobile: 1 kolom, desktop: 3 kolom */}
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
 
         {/* Debit & Credit Overview */}
-        <div className="lg:col-span-2 flex flex-col">
+        <div className="xl:col-span-2 flex flex-col">
           <h2 className="text-xl font-semibold text-[#343C6A] mb-4">Debit & Credit Overview</h2>
           <div className="bg-white rounded-3xl p-6 flex-1">
-            <div className="flex items-start justify-between mb-4">
+
+            {/* Header teks + legend — sama untuk semua breakpoint */}
+            {/* Teks debited/credited — hanya desktop */}
+            <div className="hidden xl:flex items-start justify-between mb-4">
               <p className="text-base text-[#718EBF]">
                 <span className="text-[#343C6A] font-semibold">$7,560</span> Debited &{' '}
                 <span className="text-[#343C6A] font-semibold">$5,420</span> Credited in this Week
@@ -153,39 +186,79 @@ const Accounts = () => {
               </div>
             </div>
 
-            <ResponsiveContainer width="100%" height={340}>
-              <BarChart data={chartData} barSize={30} barGap={8}>
-                <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 14, fill: '#718EBF' }} />
-                <Tooltip />
-                <Bar dataKey="credit" fill="#FCAA0B" radius={[8, 8, 8, 8]} name="Credit" />
-                <Bar dataKey="debit" fill="#1A16F3" radius={[8, 8, 8, 8]} name="Debit" />
-              </BarChart>
-            </ResponsiveContainer>
+            {/* Legend — hanya mobile & tablet */}
+            <div className="flex xl:hidden items-center gap-4 justify-end mb-4">
+              <div className="flex items-center gap-1.5">
+                <span className="w-4 h-4 rounded-sm bg-[#1A16F3] inline-block" />
+                <span className="text-sm text-[#718EBF]">Debit</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-4 h-4 rounded-sm bg-[#FCAA0B] inline-block" />
+                <span className="text-sm text-[#718EBF]">Credit</span>
+              </div>
+            </div>
+
+            {/* Chart desktop (xl+) */}
+            <div className="hidden xl:block">
+              <ResponsiveContainer width="100%" height={340}>
+                <BarChart data={chartData} barSize={30} barGap={8}>
+                  <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 14, fill: '#718EBF' }} />
+                  <Tooltip />
+                  <Bar dataKey="debit" fill="#1A16F3" radius={[8, 8, 8, 8]} name="Debit" />
+                  <Bar dataKey="credit" fill="#FCAA0B" radius={[8, 8, 8, 8]} name="Credit" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Chart tablet (md - xl) */}
+            <div className="hidden md:block xl:hidden">
+              <ResponsiveContainer width="100%" height={280}>
+                <BarChart data={chartData} barSize={30} barGap={8} barCategoryGap="20%">
+                  <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 14, fill: '#718EBF' }} />
+                  <Tooltip />
+                  <Bar dataKey="debit" fill="#1A16F3" radius={[8, 8, 8, 8]} name="Debit" />
+                  <Bar dataKey="credit" fill="#FCAA0B" radius={[8, 8, 8, 8]} name="Credit" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            {/* Chart mobile (< md) */}
+            <div className="block md:hidden">
+              <ResponsiveContainer width="100%" height={280}>
+                <BarChart data={chartData} barSize={15} barGap={8} barCategoryGap="20%">
+                  <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 14, fill: '#718EBF' }} />
+                  <Tooltip />
+                  <Bar dataKey="debit" fill="#1A16F3" radius={[8, 8, 8, 8]} name="Debit" />
+                  <Bar dataKey="credit" fill="#FCAA0B" radius={[8, 8, 8, 8]} name="Credit" />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
           </div>
         </div>
 
-      {/* Invoices Sent */}
-      <div className="flex flex-col">
-        <h2 className="text-xl font-semibold text-[#343C6A] mb-4">Invoices Sent</h2>
-        <div className="bg-white rounded-3xl p-6 flex-1">
-          <div className="space-y-4">
-            {invoices.map((inv, i) => (
-              <div key={i} className="flex items-center justify-between py-3">
-                <div className="flex items-center gap-3">
-                  <div className={`${inv.iconBg} rounded-2xl p-4 ml-3 flex-shrink-0`}>
-                    <inv.icon className="w-6 h-6" />
+        {/* Invoices Sent */}
+        <div className="flex flex-col">
+          <h2 className="text-xl font-semibold text-[#343C6A] mb-4">Invoices Sent</h2>
+          <div className="bg-white rounded-3xl p-6 flex-1">
+            <div className="space-y-4">
+              {invoices.map((inv, i) => (
+                <div key={i} className="flex items-center justify-between py-3">
+                  <div className="flex items-center gap-3">
+                    <div className={`${inv.iconBg} rounded-2xl p-4 ml-3 flex-shrink-0`}>
+                      <inv.icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-lg font-medium text-[#343C6A] ml-2">{inv.name}</p>
+                      <p className="text-base text-[#718EBF] ml-2">{inv.time}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-lg font-medium text-[#B1B1B1] ml-2">{inv.name}</p>
-                    <p className="text-base text-[#718EBF] ml-2">{inv.time}</p>
-                  </div>
+                  <p className="text-lg font-medium text-[#718EBF] mr-3">{inv.amount}</p>
                 </div>
-                <p className="text-lg font-medium text-[#718EBF] mr-3">{inv.amount}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
       </div>
 
