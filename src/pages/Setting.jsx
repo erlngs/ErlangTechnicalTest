@@ -17,7 +17,7 @@ const Setting = () => {
     <div className="bg-white rounded-3xl p-6 md:p-8">
 
       {/* Tabs */}
-      <div className="flex gap-8 border-b border-gray-100 mb-8">
+      <div className="flex gap-11 border-b border-gray-100 mb-8">
         {tabs.map(tab => (
           <button
             key={tab}
@@ -40,10 +40,14 @@ const Setting = () => {
 
           {/* Avatar */}
           <div className="flex-shrink-0 flex justify-center md:justify-start">
-            <div className="relative w-24 h-24">
-              <img src="/profile.png" alt="profile" className="w-24 h-24 rounded-full object-cover" />
-              <button className="absolute bottom-0 right-0 w-7 h-7 bg-[#1814F3] rounded-full flex items-center justify-center">
-                <EditIcon className="w-6 h-6 fill-white" />
+            <div className="relative w-40 h-40 md:w-30 md:h-30">
+              <img
+                src="/profile.png"
+                alt="profile"
+                className="w-full h-full rounded-full object-cover"
+              />
+              <button className="absolute bottom-1 right-1 w-10 h-10 md:w-9 md:h-9 bg-[#1814F3] rounded-full flex items-center justify-center">
+                <EditIcon className="w-8 h-8 md:w-6 md:h-6 fill-white" />
               </button>
             </div>
           </div>
@@ -104,10 +108,10 @@ const Setting = () => {
               <input type="text" placeholder="USA" className={inputClass} />
             </div>
 
-            <div className="md:col-span-2 flex justify-end mt-2">
-              <button className="bg-[#1814F3] text-white w-40 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors">
-              Save
-            </button>
+            <div className="md:col-span-2 flex justify-center md:justify-end mt-4">
+              <button className="bg-[#1814F3] text-white w-full md:w-40 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors">
+                Save
+              </button>
             </div>
 
           </div>
@@ -157,11 +161,11 @@ const Setting = () => {
             </div>
           </div>
 
-          <div className="flex justify-end mt-2">
-            <button className="bg-[#1814F3] text-white w-40 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors">
-              Save
-            </button>
-          </div>
+          <div className="md:col-span-2 flex justify-center md:justify-end mt-4">
+              <button className="bg-[#1814F3] text-white w-full md:w-40 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors">
+                Save
+              </button>
+            </div>
 
         </div>
       )}
@@ -192,11 +196,11 @@ const Setting = () => {
             </div>
           </div>
 
-          <div className="flex justify-end mt-2">
-            <button className="bg-[#1814F3] text-white w-40 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors">
-              Save
-            </button>
-          </div>
+          <div className="md:col-span-2 flex justify-center md:justify-end mt-4">
+              <button className="bg-[#1814F3] text-white w-full md:w-40 py-3 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors">
+                Save
+              </button>
+            </div>
 
         </div>
       )}

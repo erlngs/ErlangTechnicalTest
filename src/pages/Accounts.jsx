@@ -54,8 +54,8 @@ const Accounts = () => {
               <card.icon className="w-7 h-7" />
             </div>
             <div>
-              <p className="text-xl text-[#718EBF]">{card.label}</p>
-              <p className="text-2xl font-bold text-[#343C6A]">{card.value}</p>
+              <p className="text-l text-[#718EBF]">{card.label}</p>
+              <p className="text-2xl font-semibold text-[#343C6A]">{card.value}</p>
             </div>
           </div>
         ))}
@@ -70,7 +70,7 @@ const Accounts = () => {
             </div>
             <div>
               <p className="text-base text-[#718EBF]">{card.label}</p>
-              <p className="text-lg font-bold text-[#343C6A]">{card.value}</p>
+              <p className="text-lg font-semibold text-[#343C6A]">{card.value}</p>
             </div>
           </div>
         ))}
@@ -85,7 +85,7 @@ const Accounts = () => {
             </div>
             <div>
               <p className="text-sm text-[#718EBF]">{card.label}</p>
-              <p className="text-base font-bold text-[#343C6A]">{card.value}</p>
+              <p className="text-base font-semibold text-[#343C6A]">{card.value}</p>
             </div>
           </div>
         ))}

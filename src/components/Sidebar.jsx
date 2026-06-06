@@ -59,7 +59,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       {/* Desktop (≥1024px): sidebar penuh */}
       <aside className="hidden lg:flex w-60 h-screen bg-white shadow-md flex-col border-r border-gray-100 fixed top-0 left-0 z-30">
         <div className="flex items-center gap-3 px-6 py-6">
-          <img src="/icons/Logo.svg" alt="BankDash Logo" className="w-7 h-7" />
+          <img src="/icons/Logo.svg" alt="BankDash Logo" className="w-9 h-9" />
           <span className="text-2xl font-extrabold text-[#343C6A]">BankDash.</span>
         </div>
         <NavItems showLabel={true} />
@@ -68,7 +68,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       {/* Tablet (768px–1023px): icon-only */}
       <aside className="hidden md:flex lg:hidden w-16 h-screen bg-white shadow-md flex-col border-r border-gray-100 fixed top-0 left-0 z-30">
         <div className="flex items-center justify-center py-6">
-          <img src="/icons/Logo.svg" alt="BankDash Logo" className="w-7 h-7" />
+          <img src="/icons/Logo.svg" alt="BankDash Logo" className="w-9 h-9" />
         </div>
         <NavItems showLabel={false} />
       </aside>
@@ -87,7 +87,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       >
         <div className="flex items-center justify-between px-6 py-6">
           <div className="flex items-center gap-3">
-            <img src="/icons/Logo.svg" alt="BankDash Logo" className="w-7 h-7" />
+            <img src="/icons/Logo.svg" alt="BankDash Logo" className="w-9 h-9" />
             <span className="text-2xl font-extrabold text-[#343C6A]">BankDash.</span>
           </div>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600 p-1">

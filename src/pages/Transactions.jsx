@@ -45,7 +45,7 @@ const Transactions = () => {
         <div className="flex flex-col">
           {/* Header: desktop/tablet */}
           <div className="hidden md:flex h-[36px] items-center mb-2">
-            <h2 className="text-lg font-semibold text-[#343C6A]">My Cards</h2>
+            <h2 className="text-xl font-semibold text-[#343C6A]">My Cards</h2>
           </div>
           {/* Header: mobile*/}
           <div className="flex md:hidden justify-between items-center mb-2">
@@ -133,7 +133,7 @@ const Transactions = () => {
         {/* ── Card 2 - Light (desktop) */}
         <div className="hidden md:flex flex-col">
           <div className="h-[36px] flex items-center justify-end mb-2">
-            <button className="text-sm text-[#343C6A] font-medium hover:text-[#1814F3]">+ Add Card</button>
+            <button className="text-m text-[#343C6A] font-medium hover:text-[#1814F3]">+ Add Card</button>
           </div>
           <div className="rounded-3xl bg-white border border-gray-200 flex flex-col justify-between flex-1">
             <div className="m-5 space-y-4">
@@ -171,7 +171,7 @@ const Transactions = () => {
         {/* My Expense (kolom ke-3) */}
         <div className="flex flex-col">
           <div className="h-[36px] flex items-center mb-2">
-            <h2 className="text-lg font-semibold text-[#343C6A]">My Expense</h2>
+            <h2 className="text-xl font-semibold text-[#343C6A]">My Expense</h2>
           </div>
           <div className="bg-white rounded-3xl p-6 flex-1 flex flex-col justify-center">
             <ResponsiveContainer width="100%" height={160}>
@@ -207,7 +207,7 @@ const Transactions = () => {
       {/* Recent Transactions */}
       <div>
         <div className="flex justify-between items-center mb-5">
-          <h2 className="text-lg font-semibold text-[#343C6A]">Recent Transactions</h2>
+          <h2 className="text-xl font-semibold text-[#343C6A]">Recent Transactions</h2>
         </div>
 
         <div className="flex space-x-18 border-b border-gray-200 mb-4">
