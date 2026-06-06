@@ -1,17 +1,16 @@
-# BankDash
+# BankDash  
 
-**Nama:** Erlang Sinatrya Putra Yusya
-**NIM:** 362358302083
-**Jurusan:** Bisnis dan Informatika
-**Program Studi:** Teknologi Rekayasa Perangkat Lunak
-
----
+**Nama:** Erlang Sinatrya Putra Yusya  
+**NIM:** 362358302083  
+**Jurusan:** Bisnis dan Informatika  
+**Program Studi:** Teknologi Rekayasa Perangkat Lunak  
+**Kampus:** Politeknik Negeri Banyuwangi
 
 Dashboard BankDash modern dan responsif yang dibangun menggunakan **React + Vite + Tailwind CSS**.
 
 ## Demo
 
-🔗 [Lihat Demo](https://ErlangBankDash.vercel.app/) &nbsp;|&nbsp; 📦 [Repository](https://github.com/erlngs/ErlangTechnicalTest.git)
+🔗 [Lihat Demo](https://erlang-bank-dash.vercel.app/transactions) &nbsp;|&nbsp; 📦 [Repository](https://github.com/erlngs/ErlangTechnicalTest.git)
 
 ---
 
@@ -84,14 +83,16 @@ npm run build
 
 UI berdasarkan desain Figma dari **Hub Academy - Inagata**.
 
+## 🎨 Color Palette
+
 | Warna | Hex |
 |---|---|
 | Primer | `#1814F3` |
 | Teks Gelap | `#343C6A` |
 | Teks Abu | `#718EBF` |
 | Background | `#F5F7FA` |
-| Sukses | `#16DBAA` |
-| Bahaya | `#FE5C73` |
+| Success | `#16DBAA` |
+| Danger | `#FE5C73` |
 
 ---
 
