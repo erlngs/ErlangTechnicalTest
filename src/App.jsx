@@ -4,7 +4,7 @@ import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
 import Transactions from './pages/Transactions'
 import Accounts from './pages/Accounts'
-import Settings from './pages/Settings'
+import Setting from './pages/Setting'
 
 const pageTitles = {
   '/': 'Overview',
@@ -15,7 +15,7 @@ const pageTitles = {
   '/loans': 'Loans',
   '/services': 'Services',
   '/privileges': 'My Privileges',
-  '/settings': 'Settings',
+  '/settings': 'Setting',
 }
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
             <Route path="/" element={<></>} />
             <Route path="/transactions" element={<Transactions />} />
             <Route path="/accounts" element={<Accounts />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings" element={<Setting />} />
           </Routes>
         </main>
       </div>

@@ -11,17 +11,19 @@ const Navbar = ({ title, onMenuClick }) => {
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-20">
 
       {/* Mobile (<768px) */}
-      <div className="flex md:hidden flex-col px-4 py-4 gap-3">
+      <div className="flex md:hidden flex-col px-4 py-4 gap-3 relative">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onMenuClick}
-              className="w-9 h-9 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <RxHamburgerMenu className="w-5 h-5 text-[#343C6A]" />
-            </button>
-            <h1 className="text-xl font-semibold text-[#343C6A]">{title}</h1>
-          </div>
+          <button
+            onClick={onMenuClick}
+            className="w-9 h-9 flex items-center justify-center hover:bg-gray-100 rounded-lg transition-colors"
+          >
+            <RxHamburgerMenu className="w-5 h-5 text-[#343C6A]" />
+          </button>
+
+          <h1 className="text-xl font-semibold text-[#343C6A] absolute left-1/2 -translate-x-1/2">
+            {title}
+          </h1>
+
           <img
             src="/profile.png"
             alt="avatar"
