@@ -246,7 +246,7 @@ const Transactions = () => {
               </thead>
               <tbody>
                 {filtered.map((t, i) => (
-                  <tr key={i} className="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                  <tr key={i} className="border-t border-gray-200 hover:bg-gray-50 transition-colors">
                     <td className="py-4 flex items-center gap-3">
                         {t.income ? (
                           <IoArrowDownCircleOutline className="w-10 h-10 text-[#718EBF]" />
