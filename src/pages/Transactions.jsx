@@ -42,25 +42,24 @@ const Transactions = () => {
       {/* ── Top Section ── */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
 
-        {/* ── Card 1 - Dark ── */}
-        <div className="flex flex-col">
-          {/* Header: desktop/tablet */}
+        {/* Card 1 - Dark column */}
+        <div className="flex flex-col md:flex-1">
+          {/* Header desktop */}
           <div className="hidden md:flex h-[36px] items-center mb-2">
             <h2 className="text-xl font-semibold text-[#343C6A]">My Cards</h2>
           </div>
-          {/* Header: mobile*/}
+          {/* Header mobile */}
           <div className="flex md:hidden justify-between items-center mb-2">
             <h2 className="text-lg font-semibold text-[#343C6A]">My Cards</h2>
             <button className="text-sm text-[#343C6A] font-medium hover:text-[#1814F3]">+ Add Card</button>
           </div>
-          {/* Scroll wrapper*/}
+          {/* Scroll wrapper */}
           <div className="flex gap-4 overflow-x-auto pb-1 snap-x snap-mandatory scroll-smooth
                           [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
-                          md:overflow-visible md:pb-0 md:block">
-
-            {/* Card 1 body */}
-            <div className="flex-shrink-0 w-[75vw] max-w-[300px] md:w-full md:max-w-none md:flex-1 flex flex-col snap-start">
-              <div className="rounded-3xl bg-gradient-to-r from-[#4C49ED] to-[#0A06F4] flex flex-col justify-between h-full">
+                          md:overflow-visible md:pb-0 md:flex md:flex-1">
+            {/* Card dark */}
+            <div className="shrink-0 w-[75vw] max-w-[300px] md:w-auto md:max-w-none md:flex-1 flex flex-col snap-start">
+              <div className="rounded-3xl bg-gradient-to-r from-[#4C49ED] to-[#0A06F4] flex flex-col justify-between flex-1">
                 <div className="m-5 space-y-4">
                   <div className="flex justify-between items-center">
                     <div>
@@ -69,7 +68,7 @@ const Transactions = () => {
                     </div>
                     <ChipIcon className="w-10 h-10 opacity-100" />
                   </div>
-                  <div className="flex items-center gap-8">
+                  <div className="flex items-center gap-8 pt-6">
                     <div>
                       <div className="text-gray-300 text-[13px] uppercase">Card Holder</div>
                       <div className="text-white text-sm font-semibold">Eddy Cusuma</div>
@@ -145,7 +144,7 @@ const Transactions = () => {
                 </div>
                 <img src={ChipLightImg} alt="chip" className="w-10 h-10" />
               </div>
-              <div className="flex items-center gap-8">
+              <div className="flex items-center gap-8 pt-6">
                 <div>
                   <div className="text-[#718EBF] text-[13px] uppercase">Card Holder</div>
                   <div className="text-[#343C6A] text-sm font-semibold">Eddy Cusuma</div>
@@ -175,7 +174,7 @@ const Transactions = () => {
             <h2 className="text-xl font-semibold text-[#343C6A]">My Expense</h2>
           </div>
           <div className="bg-white rounded-3xl p-6 flex-1 flex flex-col justify-center">
-            <ResponsiveContainer width="100%" height={160}>
+            <ResponsiveContainer width="100%" height={200}>
               <BarChart data={expenseData} barSize={35}>
                 <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#718EBF' }} />
                 <Tooltip formatter={(value) => [`$${value.toLocaleString()}`, 'Expense']} />
@@ -186,7 +185,7 @@ const Transactions = () => {
                     const { x, y, width, value, index } = props
                     if (index === 4) {
                       return (
-                        <text x={x + width / 2} y={y - 5} fill="#343C6A" textAnchor="middle" fontSize={11} fontWeight="semibold">
+                        <text x={x + width / 2} y={y - 5} fill="#343C6A" textAnchor="middle" fontSize={14} fontWeight="bold">
                           {`$${value.toLocaleString()}`}
                         </text>
                       )
@@ -211,7 +210,7 @@ const Transactions = () => {
           <h2 className="text-xl font-semibold text-[#343C6A]">Recent Transactions</h2>
         </div>
 
-        <div className="flex space-x-18 border-b border-gray-200 mb-4">
+        <div className="flex space-x-15 border-b border-gray-200 mb-4">
           {tabs.map(tab => (
             <button
               key={tab}
