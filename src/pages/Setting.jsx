@@ -17,7 +17,7 @@ const Setting = () => {
     <div className="bg-white rounded-3xl p-6 md:p-8">
 
       {/* Tabs */}
-      <div className="flex gap-11 border-b border-gray-100 mb-8">
+      <div className="flex gap-6 md:gap-11 border-b border-gray-100 mb-8 overflow-x-auto whitespace-nowrap">
         {tabs.map(tab => (
           <button
             key={tab}

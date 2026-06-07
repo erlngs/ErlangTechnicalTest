@@ -79,15 +79,19 @@ const Accounts = () => {
       {/* Stat Cards mobile */}
       <div className="grid md:hidden grid-cols-2 gap-4">
         {statCards.map((card) => (
-          <div key={card.label} className={`${card.bg} rounded-3xl p-6 flex items-center gap-3`}>
-            <div className={`${card.iconBg} rounded-full p-3 flex-shrink-0`}>
-              <card.icon className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-sm text-[#718EBF]">{card.label}</p>
-              <p className="text-base font-semibold text-[#343C6A]">{card.value}</p>
-            </div>
+          <div className={`${card.bg} rounded-2xl p-4 flex items-center gap-3`}>
+          <div className={`${card.iconBg} rounded-full p-3 flex-shrink-0`}>
+            <card.icon className="w-5 h-5" />
           </div>
+          <div className="min-w-0">
+            <p className="text-xs text-[#718EBF] truncate">
+              {card.label}
+            </p>
+            <p className="text-sm font-semibold text-[#343C6A] truncate">
+              {card.value}
+            </p>
+          </div>
+        </div>
         ))}
       </div>
 

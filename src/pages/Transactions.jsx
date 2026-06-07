@@ -101,7 +101,7 @@ const Transactions = () => {
                       <div className="text-[#718EBF] text-xs">Balance</div>
                       <div className="text-[#343C6A] text-2xl font-semibold">$5,756</div>
                     </div>
-                    <ChipIcon className="w-10 h-10 opacity-100" />
+                    <ChipLightIcon className="w-10 h-10 opacity-100" />
                   </div>
                   <div className="flex items-center gap-8">
                     <div>
