@@ -4,6 +4,7 @@ import ChipIcon from '../icons/Chip_Card.svg?react'
 import ChipLightIcon from '../icons/chip-light.svg?react'
 import ElipseIcon from '../icons/elipse.svg?react'
 import ElipseIconDark from '../icons/elips.svg?react'
+import ChipLightImg from '../icons/chip-light.svg'
 import { IoArrowDownCircleOutline, IoArrowUpCircleOutline } from "react-icons/io5";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
@@ -101,7 +102,7 @@ const Transactions = () => {
                       <div className="text-[#718EBF] text-xs">Balance</div>
                       <div className="text-[#343C6A] text-2xl font-semibold">$5,756</div>
                     </div>
-                    <ChipLightIcon className="w-10 h-10 opacity-100" />
+                    <ChipLightIcon className="w-10 h-10" />
                   </div>
                   <div className="flex items-center gap-8">
                     <div>
@@ -142,7 +143,7 @@ const Transactions = () => {
                   <div className="text-[#718EBF] text-xs">Balance</div>
                   <div className="text-[#343C6A] text-2xl font-semibold">$5,756</div>
                 </div>
-                <ChipLightIcon className="w-10 h-10 opacity-100" />
+                <img src={ChipLightImg} alt="chip" className="w-10 h-10" />
               </div>
               <div className="flex items-center gap-8">
                 <div>
