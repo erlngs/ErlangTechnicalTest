@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { useEffect } from 'react'
 import HomeIcon from '../icons/home.svg?react'
 import TransactionIcon from '../icons/transaction.svg?react'
 import AccountIcon from '../icons/account.svg?react'
@@ -54,6 +55,15 @@ const NavItems = ({ showLabel = true, onItemClick }) => (
 )
 
 const Sidebar = ({ isOpen, onClose }) => {
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto'
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
+
   return (
     <>
       {/* Desktop (≥1024px): sidebar penuh */}

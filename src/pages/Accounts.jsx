@@ -87,7 +87,7 @@ const Accounts = () => {
             <p className="text-xs text-[#718EBF] truncate">
               {card.label}
             </p>
-            <p className="text-sm font-semibold text-[#343C6A] truncate">
+            <p className="text-m font-semibold text-[#343C6A] truncate">
               {card.value}
             </p>
           </div>
@@ -148,7 +148,7 @@ const Accounts = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full rounded-b-3xl bg-gradient-to-b from-[#539BFF] to-[#539BFF]">
+            <div className="w-full rounded-b-3xl bg-gradient-to-b from-[#539BFF] to-[#4f7bfe]">
               <div className="px-5 py-3">
                 <div className="flex justify-between items-center">
                   <div className="text-white text-lg font-semibold tracking-widest bg-gradient-to-r from-white to-[#539BFF] bg-clip-text text-transparent">
@@ -217,7 +217,7 @@ const Accounts = () => {
             {/* Chart tablet (md - xl) */}
             <div className="hidden md:block xl:hidden">
               <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={chartData} barSize={30} barGap={8} barCategoryGap="20%">
+                <BarChart data={chartData} barSize={25} barGap={8} barCategoryGap="20%">
                   <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 14, fill: '#718EBF' }} />
                   <Tooltip />
                   <Bar dataKey="debit" fill="#1A16F3" radius={[8, 8, 8, 8]} name="Debit" />
@@ -229,7 +229,7 @@ const Accounts = () => {
             {/* Chart mobile (< md) */}
             <div className="block md:hidden">
               <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={chartData} barSize={15} barGap={8} barCategoryGap="20%">
+                <BarChart data={chartData} barSize={10} barGap={9} barCategoryGap="20%">
                   <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 14, fill: '#718EBF' }} />
                   <Tooltip />
                   <Bar dataKey="debit" fill="#1A16F3" radius={[8, 8, 8, 8]} name="Debit" />
@@ -242,22 +242,38 @@ const Accounts = () => {
         </div>
 
         {/* Invoices Sent */}
-        <div className="flex flex-col">
-          <h2 className="text-xl font-semibold text-[#343C6A] mb-4">Invoices Sent</h2>
-          <div className="bg-white rounded-3xl p-6 flex-1">
-            <div className="space-y-4">
+        <div className="flex flex-col justify-start">
+          <h2 className="text-lg sm:text-xl font-semibold text-[#343C6A] mb-3 sm:mb-4">
+            Invoices Sent
+          </h2>
+
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6">
+            <div className="space-y-2 sm:space-y-4">
               {invoices.map((inv, i) => (
-                <div key={i} className="flex items-center justify-between py-3">
-                  <div className="flex items-center gap-3">
-                    <div className={`${inv.iconBg} rounded-2xl p-4 ml-3 flex-shrink-0`}>
-                      <inv.icon className="w-6 h-6" />
+                <div
+                  key={i}
+                  className="flex items-center justify-between py-2 sm:py-3"
+                >
+                  {/* left side */}
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className={`${inv.iconBg} rounded-xl sm:rounded-2xl p-2 sm:p-4 flex-shrink-0`}>
+                      <inv.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
+
                     <div>
-                      <p className="text-lg font-medium text-[#343C6A] ml-2">{inv.name}</p>
-                      <p className="text-base text-[#718EBF] ml-2">{inv.time}</p>
+                      <p className="text-sm sm:text-lg font-medium ml-2 text-[#343C6A]">
+                        {inv.name}
+                      </p>
+                      <p className="text-xs sm:text-base ml-2 text-[#718EBF]">
+                        {inv.time}
+                      </p>
                     </div>
                   </div>
-                  <p className="text-lg font-medium text-[#718EBF] mr-3">{inv.amount}</p>
+
+                  {/* right side */}
+                  <p className="text-sm sm:text-lg font-medium text-[#718EBF]">
+                    {inv.amount}
+                  </p>
                 </div>
               ))}
             </div>
